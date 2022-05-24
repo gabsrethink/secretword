@@ -1,11 +1,15 @@
 import './Game.css'
 import { useState, useRef } from 'react';
 import { FaHeart } from "react-icons/fa";
+import {useContext} from "react";
+import { ScoreContext } from "../context/ScoreContext";
 
-const Game = ({ verifyLetter, pickedWord, pickedCategory, letters, guessedLetters, wrongLetters, guesses, score }) => {
+
+const Game = ({ verifyLetter, pickedWord, pickedCategory, letters, guessedLetters, wrongLetters, guesses }) => {
 
   const [letter, setLetter] = useState("");
   const letterInputRef = useRef(null);
+  const {counter} = useContext(ScoreContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +36,7 @@ const Game = ({ verifyLetter, pickedWord, pickedCategory, letters, guessedLetter
     <div className="game">
 
       <p className="points">
-        <span>Pontuação: {score}</span>
+        <span>Pontuação: {counter} </span>
       </p>
 
       <h1>Adivinhe a palavra:</h1>

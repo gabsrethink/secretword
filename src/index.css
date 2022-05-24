@@ -27,3 +27,15 @@ button {
 button:hover {
   background: #708B04;
 }
+
+a,
+nav button {
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  color: white;
+  transition: .2s;
+  font-size: 1.2em;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}

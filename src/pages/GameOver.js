@@ -1,12 +1,16 @@
 import './GameOver.css'
+import { Link } from "react-router-dom";
 
-const GameOver = ({retry, score}) => {
+
+const GameOver = ({score}) => {
   return (
     <div>
       <div>
         <h1>Fim de Jogo!</h1>
         <h2>A sua pontuação foi: <span>{score}</span></h2>
-        <button onClick={retry}>Recomeçar</button>
+        <Link to="/" className="button">
+        Página inicial
+      </Link>
       </div>
     </div>
   )
